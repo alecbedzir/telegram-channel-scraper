@@ -92,7 +92,7 @@ checkLogin = async function() {
     console.log('signed in successfully')
 		app.storage.set('signedin', true)
 	} else {
-    console.log('already signed in')
+    console.log('Already signed in')
   }
   return
 }

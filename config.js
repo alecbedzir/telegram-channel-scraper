@@ -8,15 +8,22 @@ const config = {
         storage: process.env.TELEGRAM_FILE,
         devServer: false,
         msgHistory: {
-            maxMsg: 100,
-            limit: 50,
+            limit: 99
         },
         getChat: {
             limit: 50
         },
     },
+    storage: {
+        connection: {
+            host: process.env.MYSQL_HOST,
+            user: process.env.MYSQL_USER,
+            password: process.env.MYSQL_PASSWORD,
+            database: process.env.MYSQL_DBNAME
+        }
+    },
     dbfile: process.env.DB_FILE,
-    chatdb: process.env.CHAR_FILE,
+    chatdb: process.env.CHAT_FILE,
     server: process.env.SERVER_URL
 }
 
