@@ -1,0 +1,19 @@
+CREATE TABLE `channel` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `cid` bigint(20) unsigned NOT NULL,
+  `access_hash` bigint(20) unsigned NOT NULL,
+  `title` varchar(256) NOT NULL DEFAULT '',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `cid` (`cid`)
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8;
+
+CREATE TABLE `message` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `tid` int(11) unsigned NOT NULL,
+  `cid` bigint(20) unsigned NOT NULL,
+  `from_id` int(11) unsigned NOT NULL,
+  `created_at` int(11) unsigned NOT NULL,
+  `message` text,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `tid_channel_id_unique` (`tid`,`cid`)
+) ENGINE=InnoDB AUTO_INCREMENT=43224 DEFAULT CHARSET=utf8;
